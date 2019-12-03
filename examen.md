@@ -1,5 +1,20 @@
+__[Responsive](#__Responsive__)__</br>
+  &nbsp;&nbsp;&nbsp;[HowTo](##HowTo)</br>
+  &nbsp;&nbsp;&nbsp;[GridSpan](##GridSpan)</br>
+  &nbsp;&nbsp;&nbsp;[ImgResponsiveCss](##ImgResponsiveCss)</br>
+  &nbsp;&nbsp;&nbsp;[MeerdereClassesSelecteren](##MeerdereClassesSelecteren)</br>
+
+
+__[ResponsiveImages](#__ResponsiveImages__)__</br>
+  &nbsp;&nbsp;&nbsp;[FullImg/ImgOverHelePagina](##FullImg/ImgOverHelePagina)</br>
+  &nbsp;&nbsp;&nbsp;[PartIMG](##PartIMG)</br>
+  &nbsp;&nbsp;&nbsp;[WeBPIMG](##WeBPIMG)</br>
+
+
+
+
 # Responsive
-## How To
+## HowTo
 ```
 @media only screen and (min-width: 900px) {
   div::before {
@@ -21,7 +36,7 @@
 grid-column: 1 / span 2;
 ```
 
-### Img responsive css
+### ImgResponsiveCss
 ```
 .freddy {
     width: 100%;
@@ -29,7 +44,7 @@ grid-column: 1 / span 2;
   }
 ```
 
-### Meerdere classes selecteren 
+### MeerdereClassesSelecteren 
 ```
   .carriere,
   .vervolg,
@@ -46,9 +61,9 @@ width | doen
 `Bij min width` | van groot naar klein ➡️ 900 -> 300
 
 
-# Responsive Images
+# ResponsiveImages
 
-## Full Img / Img over hele pagina
+## FullImg/ImgOverHelePagina
 
 ```
 <img 
@@ -72,7 +87,7 @@ width | doen
     }
 ```
 
-## Part IMG
+## PartIMG
 
 ```
 <img srcset="./assets/img/regular/beach.jpg 1000w,
@@ -95,7 +110,7 @@ width | doen
     }
 ```
 
-## WeBP IMG
+## WeBPIMG
 ```
 <picture>
       <source
