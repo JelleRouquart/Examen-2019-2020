@@ -112,43 +112,35 @@ width | doen
 
 ## WeBPIMG
 ```
-<picture>
-      <source
-        srcset="
-          ./assets/img/webp/beach.webp       1000w,
-          ./assets/img/webp/beach@0,1x.webp   100w,
-          ./assets/img/webp/beach@0,25x.webp  250w,
-          ./assets/img/webp/beach@0,33x.webp  333w,
-          ./assets/img/webp/beach@0,5x.webp   500w,
-          ./assets/img/webp/beach@0,75x.webp  750w,
-          ./assets/img/webp/beach@1,5x.webp  1500w,
-          ./assets/img/webp/beach@1,25x.webp 1250w,
-          ./assets/img/webp/beach@2x.webp    2000w,
-          ./assets/img/webp/beach@3x.webp    3000w
-        "
-        sizes="100vw"
-        type="image/webp"
-      />
-      <source
-        srcset="
-          ./assets/img/regular/beach.jpg       1000w,
-          ./assets/img/regular/beach@0,1x.jpg   100w,
-          ./assets/img/regular/beach@0,25x.jpg  250w,
-          ./assets/img/regular/beach@0,33x.jpg  333w,
-          ./assets/img/regular/beach@0,5x.jpg   500w,
-          ./assets/img/regular/beach@0,75x.jpg  750w,
-          ./assets/img/regular/beach@1,5x.jpg  1500w,
-          ./assets/img/regular/beach@1,25x.jpg 1250w,
-          ./assets/img/regular/beach@2x.jpg    2000w,
-          ./assets/img/regular/beach@3x.jpg    3000w
-        "
-        sizes="100vw"
-        type="image/jpeg"
-      />
-      <img
-        class="img--full"
-        src="./assets/img/regular/beach.jpg"
-        alt="a lighthouse at the beach by sunset"
-      />
-    </picture>
+<picture class="banner__picture">
+        <source srcset="
+                ./assets/img/brik_210.webp            210w,
+                ./assets/img/brik_350.webp            350w,
+                ./assets/img/brik_440.webp            440w,
+                ./assets/img/brik_527.webp            527w"
+                sizes=" (min-width: 450px) 30vw,
+                        (min-width: 700px) 44vw,
+                        1px"
+                type="image/webp" />
+        <source srcset="
+                ./assets/img/brik_210.png            210w,
+                ./assets/img/brik_250.png            250w,
+                ./assets/img/brik_440.png            440w,
+                ./assets/img/brik_527.png            527w"
+                sizes=" (min-width: 450px) 30vw,
+                        (min-width: 700px) 45vw,
+                        1px" type="image/png" />
+        <img class="banner__image" src="assets/img/brik.png" height="673" width="527" alt="brik met smoothie - bestel nu">
+      </picture>
+```
+
+## hoe het moet oefeningen  
+```
+<img class="banner__image" height="673" width="527" src="assets/img/brik_527.png" srcset="assets/img/brik_527.png 527w,
+                    assets/img/brik_440.png 440w,
+                    assets/img/brik_350.png 350w,
+                    assets/img/brik_210.png 210w,
+                    assets/img/default.gif 1w" sizes="(min-width: 450px) 30vw,
+                    (min-width: 700px) 45vw,
+                    1px" alt="brik met smoothie - bestel nu">
 ```
