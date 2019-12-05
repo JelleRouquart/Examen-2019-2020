@@ -144,3 +144,61 @@ width | doen
                     (min-width: 700px) 45vw,
                     1px" alt="brik met smoothie - bestel nu">
 ```
+
+# CSS
+## Variablen
+### aanmaken
+```
+:root {
+  --colorLightest: white;
+  --colorText: #211f1f;
+  --colorMain: #f9d2cb;
+  --colorSecondary: #a3f4dc;
+  --colorGray: #fafafa;
+  --colorGrayDark: #9c9c9c;
+  --spacerSmall: .75rem; /* 12px */
+  --spacerRegular: 1rem; /* 16px */
+  --spacerBig: 1.88rem; /* 30px */
+  --fontSmall: .75rem; /* 12px */
+  --fontRegular: 1.13rem; /* 18px */
+  --fontMedium: 1.25rem; /* 20px */
+  --fontBig: 1.75rem; /* 28px */
+  --font: 'Roboto', sans-serif;
+  --fontWeightRegular: 400;
+  --fontWeightBold: 500;
+}
+
+@custom-media --only-small-screen (width >= 360px);
+@custom-media --only-medium-screen (width >= 900px)
+```
+### oproepen
+```
+    font-size: var(--fontBig);
+
+  @media (--only-medium-screen) {
+    background-image: none;
+  }
+}
+```
+
+## Importern 
+```
+@import './css/components/header.css';
+```
+
+### berekeningen 
+```
+padding: calc(var(--spacerSmall) / 2.5) calc(var(--spacerSmall) * 1);
+```
+
+### nesten
+```
+.h1-like {
+  font-size: var(--fontBig);
+  display: block;
+
+  &.h1-like::after {
+    content: 'ssd';
+  }
+}
+```
