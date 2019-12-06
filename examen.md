@@ -202,3 +202,14 @@ padding: calc(var(--spacerSmall) / 2.5) calc(var(--spacerSmall) * 1);
   }
 }
 ```
+
+# JS
+## ImportJson
+```
+import data from './assets/data/coffees.json';
+
+<!--  -->
+
+  plantBasedCoffees = data.coffees.filter(coffee => coffee.plantbased === true);
+  showCoffees(plantBasedCoffees);
+```
