@@ -10,7 +10,19 @@ __[ResponsiveImages](#__ResponsiveImages__)__</br>
   &nbsp;&nbsp;&nbsp;[PartIMG](##PartIMG)</br>
   &nbsp;&nbsp;&nbsp;[WeBPIMG](##WeBPIMG)</br>
 
+__[CSS](#__css__)__</br>
+  &nbsp;&nbsp;&nbsp;[Variablen](##Variablen)</br>
+  &nbsp;&nbsp;&nbsp;[oproepen](###oproepen)</br>
+  &nbsp;&nbsp;&nbsp;[Importeren](##Importeren)</br>
+  &nbsp;&nbsp;&nbsp;[berekeningen](###berekeningen)</br>
+  &nbsp;&nbsp;&nbsp;[nesten](###nesten)</br>
 
+__[JS](#__JS__)__</br>
+  &nbsp;&nbsp;&nbsp;[Variablen](##Variablen)</br>
+  &nbsp;&nbsp;&nbsp;[ImportCSS](##ImportCSS)</br>
+  &nbsp;&nbsp;&nbsp;[ImportJson](##ImportJson)</br>
+  &nbsp;&nbsp;&nbsp;[FindId](##FindId)</br>
+  &nbsp;&nbsp;&nbsp;[IfAdd](##IfAdd)</br>
 
 
 # Responsive
@@ -181,12 +193,12 @@ width | doen
 }
 ```
 
-## Importern 
+## Importeren
 ```
 @import './css/components/header.css';
 ```
 
-### berekeningen 
+### berekeningen
 ```
 padding: calc(var(--spacerSmall) / 2.5) calc(var(--spacerSmall) * 1);
 ```
@@ -204,6 +216,11 @@ padding: calc(var(--spacerSmall) / 2.5) calc(var(--spacerSmall) * 1);
 ```
 
 # JS
+## ImportCSS
+```
+import './style.css';
+```
+
 ## ImportJson
 ```
 import data from './assets/data/coffees.json';
@@ -213,3 +230,27 @@ import data from './assets/data/coffees.json';
   plantBasedCoffees = data.coffees.filter(coffee => coffee.plantbased === true);
   showCoffees(plantBasedCoffees);
 ```
+
+## FindId
+```
+const inorderCoffee = findOrderByCoffeeId(coffee.id);
+
+<!--  -->
+
+const findOrderByCoffeeId = id => {
+    return orders.find(order => order.coffee.id === id);
+  };
+```
+
+## IfAdd
+```
+if (inorderCoffee) {
+      inorderCoffee.amount ++;
+    } else {
+      orders.push({
+        amount: 1,
+        id: coffee
+      });
+    }
+```
+
