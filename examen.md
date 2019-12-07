@@ -157,6 +157,19 @@ width | doen
                     1px" alt="brik met smoothie - bestel nu">
 ```
 
+## Verschillende fotos
+```
+<picture class="freddy">
+  <source media="(max-width: 499px)" srcset="assets/img/freddy_tour_1978_sq.jpg">
+  <source media="(max-width: 699px)" srcset="assets/img/freddy_tour_1978_portrait.jpg">
+  <source media="(max-width: 899px)" srcset="assets/img/freddy_tour_1978_landscape.jpg">
+  <source media="(min-width: 900px)" srcset="assets/img/freddy_tour_1978_full.jpg">
+  <img src="./assets/img/freddy.jpg" width="266" height="400" alt="freddy op zine velo">
+</picture>
+```
+
+
+
 # CSS
 ## Variablen
 ### aanmaken
@@ -252,5 +265,41 @@ if (inorderCoffee) {
         id: coffee
       });
     }
+
+    <!--  -->
+
+    if (orders.length > 0) {
+      // Hide empty state & show orders instead
+      document.querySelector(`.orders__wrapper`).classList.remove(`hide`);
+      document.querySelector(`.emptystate`).classList.add(`hide`);
+
+      const $orders = document.querySelector(`.orders`);
+      $orders.innerHTML = ``;
+      orders.forEach(order => {
+        const $li = createOrder(order);
+        $orders.appendChild($li);
+      });
+    } else {
+      // Show empty state
+      document.querySelector(`.orders__wrapper`).classList.add(`hide`);
+      document.querySelector(`.emptystate`).classList.remove(`hide`);
+    }
 ```
 
+## DataSet
+```
+$li.dataset.id = coffee.id;
+
+<!--  -->
+
+const clickedCoffee = plantBasedCoffees.find(coffee => coffee.id === parseInt(e.currentTarget.dataset.id));
+addToOrder(clickedCoffee);
+```
+
+## RemoveId
+```
+const coffeeId = parseInt(e.currentTarget.parentElement.dataset.id);
+  orders = orders.filter(order => {
+  return coffeeId !== order.id.id;
+});
+```
