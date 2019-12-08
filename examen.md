@@ -255,6 +255,13 @@ const findOrderByCoffeeId = id => {
   };
 ```
 
+## HandleClick 
+```
+const clickedCoffee = coffees.find(coffee => coffee.id === parseInt(e.currentTarget.dataset.id));
+    addToOrder(clickedCoffee);
+```
+
+
 ## IfAdd
 ```
 if (inorderCoffee) {
@@ -302,4 +309,41 @@ const coffeeId = parseInt(e.currentTarget.parentElement.dataset.id);
   orders = orders.filter(order => {
   return coffeeId !== order.id.id;
 });
+```
+
+## SQLToJson 
+```
+const $value = document.querySelector(`.input--filter`);
+$value.addEventListener(`keyup`, handleSubmitFilterForm);
+
+<!--  -->
+
+const handleSubmitFilterForm = e => {
+    console.log();
+    e.preventDefault();
+    const qs = new URLSearchParams([
+      ...new FormData($filterForm).entries()
+    ]).toString();
+    fetch(`${$filterForm.getAttribute('action')}?${qs}`, {
+      headers: new Headers({
+        Accept: `application/json`
+      }),
+      method: 'get'
+    })
+      .then(r => r.json())
+      .then(data => handleLoadPlayers(data));
+    window.history.pushState(
+      {},
+      '',
+      `${window.location.href.split('?')[0]}?${qs}`
+    );
+  };
+```
+
+## calculateTotal
+```
+const total = orders.reduce((total, order) => {
+  return total + order.id.prices.medium * order.amount;
+}, 0);
+document.querySelector(`.total__price span`).textContent = total;
 ```
